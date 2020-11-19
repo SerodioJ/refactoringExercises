@@ -22,5 +22,11 @@ public class Item {
 		return 0;
 	}
 
+	public float getTotalPrice(){ // add method to calculate total price of a Item
+		float price = this.getPrice() + this.getTax();
+		if (this.isOnSale())
+			price = price - this.getSaleDiscount() * price;
+		return price;
+	}
 	//...
 }
